@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veera — AI & Data Science Student · Developer Portfolio</title>
+  <meta name="description" content="Portfolio of Veera, an AI & Data Science student building AI voice assistants, computer vision systems, and full-stack applications.">
+  <meta name="author" content="Veera">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Veera — AI & Data Science Student · Developer Portfolio">
+  <meta property="og:description" content="AI/ML engineer and full-stack developer building intelligent systems and the interfaces around them.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/og-image.svg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="no-scroll">
+
+  <!-- ============ LOADER ============ -->
+  <div id="loader" class="loader" aria-hidden="true">
+    <div class="loader__mark">V</div>
+    <div class="loader__bar"><span></span></div>
+  </div>
+
+  <!-- ============ HEADER / NAV ============ -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="#home" class="brand js-name">Veera</a>
+
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#certificates">Certificates</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#achievements">Achievements</a></li>
+          <li><a href="#hackathons">Hackathons</a></li>
+          <li><a href="#timeline">Timeline</a></li>
+          <li><a href="#resume">Resume</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-header__actions">
+        <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+          <i class="fa-solid fa-sun theme-toggle__icon theme-toggle__icon--sun"></i>
+          <i class="fa-solid fa-moon theme-toggle__icon theme-toggle__icon--moon"></i>
+        </button>
+        <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HOME / HERO ============ -->
+    <section id="home" class="hero">
+      <canvas id="particleCanvas" class="hero__particles" aria-hidden="true"></canvas>
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <p class="eyebrow">Hi, I'm</p>
+          <h1 class="hero__name js-name">Veera</h1>
+          <p class="hero__typing">
+            <span id="typingText"></span><span class="cursor-blink" aria-hidden="true">|</span>
+          </p>
+          <p class="hero__tagline js-tagline">Loading tagline...</p>
+          <div class="hero__actions">
+            <a href="#resume" class="btn btn--primary">Download Resume</a>
+            <a href="#contact" class="btn btn--secondary">Contact Me</a>
+            <a href="#projects" class="btn btn--ghost">View Projects</a>
+          </div>
+          <div class="social-icons js-social-links" aria-label="Social links"></div>
+        </div>
+        <div class="hero__visual">
+          <div class="hero__photo-ring">
+            <img src="assets/images/profile-placeholder.svg" alt="Portrait of Veera" class="hero__photo js-profile-image">
+          </div>
+        </div>
+      </div>
+      <a href="#about" class="scroll-cue" aria-label="Scroll to About section"><i class="fa-solid fa-chevron-down"></i></a>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="section">
+      <div class="container">
+        <p class="eyebrow">About</p>
+        <h2 class="section__title">Get to know me</h2>
+        <div class="about__grid">
+          <div class="about__text" id="aboutParagraphs"><p>Loading...</p></div>
+          <div class="about__side">
+            <h3>What I'm into</h3>
+            <div class="tag-list" id="interestTags"></div>
+          </div>
+        </div>
+        <div class="stat-grid" id="aboutStats"></div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section id="skills" class="section section--alt">
+      <div class="container">
+        <p class="eyebrow">Skills</p>
+        <h2 class="section__title">What I work with</h2>
+        <div class="skills-grid" id="skillsGrid"></div>
+      </div>
+    </section>
+
+    <!-- ============ EDUCATION ============ -->
+    <section id="education" class="section">
+      <div class="container">
+        <p class="eyebrow">Education</p>
+        <h2 class="section__title">Academic background</h2>
+        <div class="v-timeline" id="educationTimeline"></div>
+      </div>
+    </section>
+
+    <!-- ============ CERTIFICATES ============ -->
+    <section id="certificates" class="section section--alt">
+      <div class="container">
+        <p class="eyebrow">Certificates</p>
+        <h2 class="section__title">Certifications</h2>
+        <div class="cert-grid" id="certificatesGrid"></div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section id="projects" class="section">
+      <div class="container">
+        <p class="eyebrow">Projects</p>
+        <h2 class="section__title">Featured work</h2>
+        <div class="filter-bar" id="projectFilters"></div>
+        <div class="projects-grid" id="projectsGrid"></div>
+        <p class="projects-more">More coming soon…</p>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section id="experience" class="section section--alt">
+      <div class="container">
+        <p class="eyebrow">Experience</p>
+        <h2 class="section__title">How I've spent my time</h2>
+        <div class="experience-grid" id="experienceGrid"></div>
+      </div>
+    </section>
+
+    <!-- ============ ACHIEVEMENTS ============ -->
+    <section id="achievements" class="section">
+      <div class="container">
+        <p class="eyebrow">Achievements</p>
+        <h2 class="section__title">Milestones so far</h2>
+        <div class="achievements-grid" id="achievementsGrid"></div>
+      </div>
+    </section>
+
+    <!-- ============ HACKATHONS ============ -->
+    <section id="hackathons" class="section section--alt">
+      <div class="container">
+        <p class="eyebrow">Hackathons</p>
+        <h2 class="section__title">Team & competitive projects</h2>
+        <div class="hackathons-grid" id="hackathonsGrid"></div>
+      </div>
+    </section>
+
+    <!-- ============ TIMELINE ============ -->
+    <section id="timeline" class="section">
+      <div class="container">
+        <p class="eyebrow">Timeline</p>
+        <h2 class="section__title">My learning journey</h2>
+        <div class="v-timeline" id="journeyTimeline"></div>
+      </div>
+    </section>
+
+    <!-- ============ RESUME ============ -->
+    <section id="resume" class="section section--alt">
+      <div class="container resume__container">
+        <p class="eyebrow">Resume</p>
+        <h2 class="section__title">My resume</h2>
+        <p class="resume__intro">Download a copy of my resume, or preview it below before reaching out.</p>
+        <a href="assets/resume.pdf" class="btn btn--primary js-resume-link" download>
+          <i class="fa-solid fa-download"></i> Download Resume
+        </a>
+        <div class="resume__preview glass-card">
+          <iframe src="assets/resume.pdf" title="Resume preview" loading="lazy"></iframe>
+          <p class="resume__preview-fallback">Add your PDF at <code>assets/resume.pdf</code> to enable this preview.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="section">
+      <div class="container">
+        <p class="eyebrow">Contact</p>
+        <h2 class="section__title">Let's work together</h2>
+        <div class="contact__grid">
+          <form id="contactForm" class="contact-form glass-card" novalidate>
+            <label for="formName">Name</label>
+            <input type="text" id="formName" name="name" placeholder="Your name" required>
+
+            <label for="formEmail">Email</label>
+            <input type="email" id="formEmail" name="email" placeholder="you@example.com" required>
+
+            <label for="formMessage">Message</label>
+            <textarea id="formMessage" name="message" rows="5" placeholder="Tell me about your project or opportunity" required></textarea>
+
+            <button type="submit" class="btn btn--primary">Send Message <i class="fa-solid fa-paper-plane"></i></button>
+            <p id="contactFormStatus" class="form-status" role="status"></p>
+          </form>
+
+          <div class="contact-info">
+            <div class="contact-info__item glass-card">
+              <i class="fa-solid fa-envelope"></i>
+              <div>
+                <h4>Email</h4>
+                <a id="contactEmail" href="#"></a>
+              </div>
+            </div>
+            <div class="contact-info__item glass-card">
+              <i class="fa-solid fa-location-dot"></i>
+              <div>
+                <h4>Location</h4>
+                <span id="contactLocation"></span>
+              </div>
+            </div>
+            <div class="contact-info__item glass-card">
+              <i class="fa-solid fa-circle-check"></i>
+              <div>
+                <h4>Availability</h4>
+                <span id="contactAvailability"></span>
+              </div>
+            </div>
+            <div class="social-icons js-social-links" aria-label="Social links"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div class="site-footer__brand">
+        <span class="js-name">Veera</span>
+        <p>Building intelligent systems, one project at a time.</p>
+      </div>
+      <ul class="site-footer__links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="social-icons js-social-links" aria-label="Social links"></div>
+    </div>
+    <div class="container site-footer__bottom">
+      <p>&copy; <span class="js-year"></span> <span class="js-name">Veera</span>. All rights reserved.</p>
+      <a href="#home" class="back-to-top">Back to top <i class="fa-solid fa-arrow-up"></i></a>
+    </div>
+  </footer>
+
+  <!-- ============ SCROLL TO TOP BUTTON ============ -->
+  <button id="scrollTopBtn" class="scroll-top" aria-label="Scroll to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
